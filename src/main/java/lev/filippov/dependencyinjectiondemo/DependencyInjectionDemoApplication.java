@@ -14,8 +14,7 @@ public class DependencyInjectionDemoApplication {
     public static void main(String[] args) {
         ApplicationContext applicationContext = SpringApplication.run(DependencyInjectionDemoApplication.class, args);
         MyController controller = (MyController)applicationContext.getBean("myController");
-        controller.hello();
-
+        System.out.println(controller.hello());
         System.out.println(applicationContext.getBean(PropertyInjectedController.class).sayHello());
         System.out.println(applicationContext.getBean(SettersInjectedController.class).sayHello());
         System.out.println(applicationContext.getBean(ConstructorInjectedService.class).sayHello() );

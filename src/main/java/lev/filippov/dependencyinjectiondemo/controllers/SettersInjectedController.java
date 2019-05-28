@@ -1,7 +1,6 @@
 package lev.filippov.dependencyinjectiondemo.controllers;
 
 import lev.filippov.dependencyinjectiondemo.services.GreetingService;
-import lev.filippov.dependencyinjectiondemo.services.GreetingServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -17,6 +16,6 @@ public class SettersInjectedController {
     }
 
     public String sayHello() {
-        return greetingService.seyHello();
+        return greetingService.sayGreeting();
     }
 }
