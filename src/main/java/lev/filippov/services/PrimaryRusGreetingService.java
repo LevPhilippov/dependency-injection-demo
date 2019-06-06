@@ -1,15 +1,16 @@
 package lev.filippov.services;
 
-public class DefaultGreetingService implements GreetingService {
+
+public class PrimaryRusGreetingService implements GreetingService {
 
     private GreetingRepository greetingRepository;
 
-    public DefaultGreetingService(GreetingRepository greetingRepository) {
+    public PrimaryRusGreetingService(GreetingRepository greetingRepository) {
         this.greetingRepository = greetingRepository;
     }
 
     @Override
     public String sayGreeting() {
-        return greetingRepository.getEnglishGreeting();
+        return greetingRepository.getRusGreeting();
     }
 }
