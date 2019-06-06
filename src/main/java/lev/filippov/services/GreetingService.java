@@ -1,4 +1,4 @@
-package lev.filippov.dependencyinjectiondemo.services;
+package lev.filippov.services;
 
 public interface GreetingService {
     String sayGreeting();

@@ -1,6 +1,6 @@
 package lev.filippov.dependencyinjectiondemo.controllers;
 
-import lev.filippov.dependencyinjectiondemo.services.GreetingService;
+import lev.filippov.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

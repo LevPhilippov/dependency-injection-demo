@@ -7,8 +7,13 @@ import lev.filippov.dependencyinjectiondemo.controllers.SettersInjectedControlle
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
 
 @SpringBootApplication
+//спринг сканирует на наличие аннотаций packageб в котором располагается и все дочерние. Если bean-ы находятся
+//в других package или выше Спринг не ищет их автоматически- мы используем @ComponentScan - аннотацию чтобы указатьб где искать.
+@ComponentScan(basePackages = {"lev.filippov.services", "lev.filippov.dependencyinjectiondemo"})
 public class DependencyInjectionDemoApplication {
 
     public static void main(String[] args) {
