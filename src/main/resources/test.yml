@@ -1,0 +1,25 @@
+#Comment нужно использовать минимуму 2 пробела (можно больше), не использовать Tab, чтобы разграничить переменный
+name: Lev
+
+names:
+   -One
+   -Two
+   -Three
+
+book:
+     author: Any Author
+     publisher: Any house
+
+truth: yes #true, True, TRUE
+false: false #no, False, FALSE
+string_val: "this is a String"
+
+include_new_lines: | #Это будет записано так, как написано (с переносом строки)
+  asfda sdsa da sd sa
+  sd asd sad
+  d sa das da  dsadasd
+
+ignore_new_lines: > #Это будет записано в одну строчку
+  dsa d dsa  dsa dsa
+   das
+   dsa as da

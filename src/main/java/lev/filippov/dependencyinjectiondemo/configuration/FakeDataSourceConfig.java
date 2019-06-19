@@ -1,6 +1,7 @@
 package lev.filippov.dependencyinjectiondemo.configuration;
 
 import lev.filippov.dependencyinjectiondemo.dataSourses.AnotherOneFakeDataSource;
+import lev.filippov.dependencyinjectiondemo.dataSourses.FakeDataSourceForYML;
 import lev.filippov.dependencyinjectiondemo.dataSourses.FakeDataSourse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +20,7 @@ import org.springframework.core.env.Environment;
         @PropertySource("classpath:datasource.properties"),
         @PropertySource("classpath:moredatasource.properties")
 })
+//также можно определить properties в application.properties - для этого не нужны @PropertySource/s и PSPH
 public class FakeDataSourceConfig {
 
     @Autowired
@@ -39,6 +41,15 @@ public class FakeDataSourceConfig {
     @Value("${fake.more.url}")
     private String moreurl;
 
+    //binding setting from YML
+    @Value("${fake.yamlusername}")
+    private String ymlusername;
+    @Value ("${fake.yamlpassword}")
+    private String ymlpassword;
+    @Value("${fake.yamlurl}")
+    private String ymlurl;
+
+
     @Bean
     public FakeDataSourse fakeDataSourse(){
         FakeDataSourse fakeDataSourse = new FakeDataSourse();
@@ -55,6 +66,15 @@ public class FakeDataSourceConfig {
         anotherOneFakeDataSource.setUsername(moreusername);
         anotherOneFakeDataSource.setPassword(morepassword);
         return anotherOneFakeDataSource;
+    }
+
+    @Bean
+    public FakeDataSourceForYML fakeDataSourceForYML() {
+        FakeDataSourceForYML fakeDataSourceForYML = new FakeDataSourceForYML();
+        fakeDataSourceForYML.setUsername(ymlusername);
+        fakeDataSourceForYML.setPassword(ymlpassword);
+        fakeDataSourceForYML.setUrl(ymlurl);
+        return fakeDataSourceForYML;
     }
 
     @Bean //эта штука занимается поиском файла конфигурации, она должна быть именно в таком виде

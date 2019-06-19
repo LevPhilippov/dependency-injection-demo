@@ -5,6 +5,7 @@ import lev.filippov.dependencyinjectiondemo.controllers.MyController;
 import lev.filippov.dependencyinjectiondemo.controllers.PropertyInjectedController;
 import lev.filippov.dependencyinjectiondemo.controllers.SettersInjectedController;
 import lev.filippov.dependencyinjectiondemo.dataSourses.AnotherOneFakeDataSource;
+import lev.filippov.dependencyinjectiondemo.dataSourses.FakeDataSourceForYML;
 import lev.filippov.dependencyinjectiondemo.dataSourses.FakeDataSourse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,10 +22,13 @@ public class DependencyInjectionDemoApplication {
     public static void main(String[] args) {
         ApplicationContext applicationContext = SpringApplication.run(DependencyInjectionDemoApplication.class, args);
         //injectionDemoWithDifferentControllers(applicationContext);
+
         System.out.println(applicationContext.getBean(FakeDataSourse.class).getUrl());
         System.out.println(applicationContext.getBean(FakeDataSourse.class).getUsername());
         //вызов параметров из другого класса
         System.out.println(applicationContext.getBean(AnotherOneFakeDataSource.class).getUrl());
+        //вызов параметров класса от YAML
+        System.out.println(applicationContext.getBean(FakeDataSourceForYML.class).getPassword());
     }
 
     private static void injectionDemoWithDifferentControllers(ApplicationContext applicationContext) {
