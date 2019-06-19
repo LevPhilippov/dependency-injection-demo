@@ -4,6 +4,7 @@ import lev.filippov.dependencyinjectiondemo.controllers.ConstructorInjectedServi
 import lev.filippov.dependencyinjectiondemo.controllers.MyController;
 import lev.filippov.dependencyinjectiondemo.controllers.PropertyInjectedController;
 import lev.filippov.dependencyinjectiondemo.controllers.SettersInjectedController;
+import lev.filippov.dependencyinjectiondemo.dataSourses.AnotherOneFakeDataSource;
 import lev.filippov.dependencyinjectiondemo.dataSourses.FakeDataSourse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,8 +22,9 @@ public class DependencyInjectionDemoApplication {
         ApplicationContext applicationContext = SpringApplication.run(DependencyInjectionDemoApplication.class, args);
         //injectionDemoWithDifferentControllers(applicationContext);
         System.out.println(applicationContext.getBean(FakeDataSourse.class).getUrl());
-
-
+        System.out.println(applicationContext.getBean(FakeDataSourse.class).getUsername());
+        //вызов параметров из другого класса
+        System.out.println(applicationContext.getBean(AnotherOneFakeDataSource.class).getUrl());
     }
 
     private static void injectionDemoWithDifferentControllers(ApplicationContext applicationContext) {
