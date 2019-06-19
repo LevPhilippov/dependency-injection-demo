@@ -2,3 +2,10 @@ fake:
     YAMLusername: "YAMLusername"
     YAMLpassword: "YAMLpassword"
     YAMLurl: "YAML url"
+---
+spring:
+    profiles: it
+fake:
+  YAMLusername: "YAMLutente"
+  YAMLpassword: "YAMLparola d'ordine"
+  YAMLurl: "YAML IT url"

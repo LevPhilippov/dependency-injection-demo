@@ -23,3 +23,4 @@ ignore_new_lines: > #Это будет записано в одну строчк
   dsa d dsa  dsa dsa
    das
    dsa as da
+---#file separator <- makes Spring consider all below this as another file

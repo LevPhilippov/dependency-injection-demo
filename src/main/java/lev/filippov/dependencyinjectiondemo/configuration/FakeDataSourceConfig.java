@@ -41,13 +41,6 @@ public class FakeDataSourceConfig {
     @Value("${fake.more.url}")
     private String moreurl;
 
-    //binding setting from YML
-    @Value("${fake.yamlusername}")
-    private String ymlusername;
-    @Value ("${fake.yamlpassword}")
-    private String ymlpassword;
-    @Value("${fake.yamlurl}")
-    private String ymlurl;
 
 
     @Bean
@@ -66,15 +59,6 @@ public class FakeDataSourceConfig {
         anotherOneFakeDataSource.setUsername(moreusername);
         anotherOneFakeDataSource.setPassword(morepassword);
         return anotherOneFakeDataSource;
-    }
-
-    @Bean
-    public FakeDataSourceForYML fakeDataSourceForYML() {
-        FakeDataSourceForYML fakeDataSourceForYML = new FakeDataSourceForYML();
-        fakeDataSourceForYML.setUsername(ymlusername);
-        fakeDataSourceForYML.setPassword(ymlpassword);
-        fakeDataSourceForYML.setUrl(ymlurl);
-        return fakeDataSourceForYML;
     }
 
     @Bean //эта штука занимается поиском файла конфигурации, она должна быть именно в таком виде
